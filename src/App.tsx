@@ -133,6 +133,7 @@ function App() {
             {/* Footer */}
             <footer className="text-center py-4 text-xs text-slate-300">
               {t('footer')}
+              <span className="ml-3 opacity-50">v{__APP_VERSION__}</span>
             </footer>
           </div>
 
