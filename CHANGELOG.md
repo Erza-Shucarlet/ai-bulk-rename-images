@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.6] - 2026-04-02
+
+### Added
+- 深色模式（Dark Mode）支持，自动跟随系统偏好，可手动切换
+- Header 右上角新增月亮/太阳切换按钮
+- 主题选择持久化到 localStorage
+- 所有页面（主页、隐私政策、浏览器不支持页）均适配深色模式
+
+---
+
 ## [1.0.5] - 2026-04-02
 
 ### Added

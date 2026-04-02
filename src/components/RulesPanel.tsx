@@ -22,14 +22,14 @@ import CaseRule from './rules/CaseRule';
 import SequenceRule from './rules/SequenceRule';
 import ExtensionRule from './rules/ExtensionRule';
 
-// 规则类型标签颜色
+// 规则类型标签颜色（含深色模式变体）
 const ruleColors: Record<RuleType, string> = {
-  replace: 'bg-purple-100 text-purple-700',
-  prefix: 'bg-green-100 text-green-700',
-  suffix: 'bg-teal-100 text-teal-700',
-  case: 'bg-orange-100 text-orange-700',
-  sequence: 'bg-blue-100 text-blue-700',
-  extension: 'bg-rose-100 text-rose-700',
+  replace: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+  prefix: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+  suffix: 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400',
+  case: 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+  sequence: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+  extension: 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
 };
 
 // 单条规则的可排序包装组件
@@ -59,15 +59,15 @@ function SortableRuleItem({ rule }: { rule: Rule }) {
     <div
       ref={setNodeRef}
       style={style}
-      className="bg-white border border-slate-200 rounded-xl overflow-hidden"
+      className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
     >
       {/* 规则头部 */}
-      <div className="flex items-center gap-2 px-3 py-2 bg-slate-50 border-b border-slate-100">
+      <div className="flex items-center gap-2 px-3 py-2 bg-slate-50 dark:bg-slate-700/50 border-b border-slate-100 dark:border-slate-600">
         {/* 拖拽手柄 */}
         <button
           {...attributes}
           {...listeners}
-          className="flex-shrink-0 cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-500 p-0.5 rounded"
+          className="flex-shrink-0 cursor-grab active:cursor-grabbing text-slate-300 dark:text-slate-600 hover:text-slate-500 dark:hover:text-slate-400 p-0.5 rounded"
           title={t('dragToReorder')}
         >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -83,7 +83,7 @@ function SortableRuleItem({ rule }: { rule: Rule }) {
         {/* 删除按钮 */}
         <button
           onClick={() => removeRule(rule.id)}
-          className="ml-auto flex-shrink-0 p-1 text-slate-300 hover:text-red-500 rounded transition-colors"
+          className="ml-auto flex-shrink-0 p-1 text-slate-300 dark:text-slate-600 hover:text-red-500 rounded transition-colors"
           title={t('removeRule')}
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -130,12 +130,12 @@ export default function RulesPanel() {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-5 h-full flex flex-col">
+    <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 h-full flex flex-col">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">
+        <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
           {t('renameRules')}
         </h2>
-        <span className="text-xs text-slate-400">{t('rulesTopToBottom')}</span>
+        <span className="text-xs text-slate-400 dark:text-slate-500">{t('rulesTopToBottom')}</span>
       </div>
 
       {/* 添加规则按钮 */}
@@ -156,7 +156,7 @@ export default function RulesPanel() {
         {showDropdown && (
           <>
             <div className="fixed inset-0 z-10" onClick={() => setShowDropdown(false)} />
-            <div className="absolute left-0 top-full mt-1 w-64 bg-white border border-slate-200 rounded-xl shadow-lg z-20 py-1 overflow-hidden">
+            <div className="absolute left-0 top-full mt-1 w-64 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg dark:shadow-slate-900/50 z-20 py-1 overflow-hidden">
               {ruleOptions.map((opt) => (
                 <button
                   key={opt.type}
@@ -164,14 +164,14 @@ export default function RulesPanel() {
                     addRule(opt.type);
                     setShowDropdown(false);
                   }}
-                  className="w-full px-4 py-2.5 text-left hover:bg-slate-50 transition-colors"
+                  className="w-full px-4 py-2.5 text-left hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
                 >
                   <div className="flex items-center gap-2">
                     <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${ruleColors[opt.type]}`}>
                       {opt.label}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-0.5">{opt.desc}</p>
+                  <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">{opt.desc}</p>
                 </button>
               ))}
             </div>
@@ -183,8 +183,8 @@ export default function RulesPanel() {
       <div className="flex-1 overflow-y-auto space-y-2 min-h-0">
         {rules.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-32 text-center">
-            <p className="text-sm text-slate-400">{t('noRulesYet')}</p>
-            <p className="text-xs text-slate-300 mt-1">{t('clickToAddRule')}</p>
+            <p className="text-sm text-slate-400 dark:text-slate-500">{t('noRulesYet')}</p>
+            <p className="text-xs text-slate-300 dark:text-slate-600 mt-1">{t('clickToAddRule')}</p>
           </div>
         ) : (
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>

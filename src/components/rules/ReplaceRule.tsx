@@ -30,26 +30,26 @@ export default function ReplaceRule({ rule }: Props) {
     <div className="space-y-2">
       <div className="flex gap-2 items-center">
         <div className="flex-1">
-          <label className="text-xs text-slate-500 mb-1 block">{t('findLabel')}</label>
+          <label className="text-xs text-slate-500 dark:text-slate-400 mb-1 block">{t('findLabel')}</label>
           <input
             type="text"
             value={rule.pattern}
             onChange={(e) => handlePatternChange(e.target.value)}
             placeholder={rule.useRegex ? t('regexPlaceholder') : t('findPlaceholder')}
-            className={`w-full px-3 py-1.5 text-sm border rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30 ${
-              regexError ? 'border-red-400' : 'border-slate-200'
+            className={`w-full px-3 py-1.5 text-sm border rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30 bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200 ${
+              regexError ? 'border-red-400' : 'border-slate-200 dark:border-slate-600'
             }`}
           />
           {regexError && <p className="text-xs text-red-500 mt-0.5">{regexError}</p>}
         </div>
         <div className="flex-1">
-          <label className="text-xs text-slate-500 mb-1 block">{t('replaceLabel')}</label>
+          <label className="text-xs text-slate-500 dark:text-slate-400 mb-1 block">{t('replaceLabel')}</label>
           <input
             type="text"
             value={rule.replacement}
             onChange={(e) => updateRule(rule.id, { replacement: e.target.value })}
             placeholder={t('replacePlaceholder')}
-            className="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30"
+            className="w-full px-3 py-1.5 text-sm border border-slate-200 dark:border-slate-600 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30 bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200"
           />
         </div>
       </div>
@@ -64,7 +64,7 @@ export default function ReplaceRule({ rule }: Props) {
             }}
             className="w-3.5 h-3.5 accent-blue-500"
           />
-          <span className="text-xs text-slate-600">{t('useRegex')}</span>
+          <span className="text-xs text-slate-600 dark:text-slate-300">{t('useRegex')}</span>
         </label>
         <label className="flex items-center gap-1.5 cursor-pointer">
           <input
@@ -73,7 +73,7 @@ export default function ReplaceRule({ rule }: Props) {
             onChange={(e) => updateRule(rule.id, { caseSensitive: e.target.checked })}
             className="w-3.5 h-3.5 accent-blue-500"
           />
-          <span className="text-xs text-slate-600">{t('caseSensitive')}</span>
+          <span className="text-xs text-slate-600 dark:text-slate-300">{t('caseSensitive')}</span>
         </label>
       </div>
     </div>

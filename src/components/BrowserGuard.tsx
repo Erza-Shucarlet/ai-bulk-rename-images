@@ -41,9 +41,7 @@ function EdgeIcon() {
           <stop offset="0" stopColor="#1B7CD6"/>
           <stop offset="1" stopColor="#0C3B8C"/>
         </linearGradient>
-        <clipPath id="ec">
-          <circle cx="24" cy="24" r="22"/>
-        </clipPath>
+        <clipPath id="ec"><circle cx="24" cy="24" r="22"/></clipPath>
       </defs>
       {/* 蓝色主体 */}
       <circle cx="24" cy="24" r="22" fill="url(#eg1)"/>
@@ -72,18 +70,18 @@ export default function BrowserGuard({ children }: BrowserGuardProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm">
-      <div className="max-w-md w-full mx-4 bg-white rounded-2xl shadow-2xl p-8 text-center">
+      <div className="max-w-md w-full mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 text-center">
         {/* 语言切换 */}
         <div className="flex justify-end mb-4">
-          <div className="flex items-center bg-slate-100 rounded-lg p-0.5 gap-0.5">
+          <div className="flex items-center bg-slate-100 dark:bg-slate-700 rounded-lg p-0.5 gap-0.5">
             {langOptions.map((opt) => (
               <button
                 key={opt.value}
                 onClick={() => setLang(opt.value)}
                 className={`px-3 py-1 text-xs font-semibold rounded-md transition-all ${
                   lang === opt.value
-                    ? 'bg-white text-slate-800 shadow-sm'
-                    : 'text-slate-400 hover:text-slate-600'
+                    ? 'bg-white dark:bg-slate-500 text-slate-800 dark:text-slate-100 shadow-sm'
+                    : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
                 }`}
               >
                 {opt.label}
@@ -92,32 +90,32 @@ export default function BrowserGuard({ children }: BrowserGuardProps) {
           </div>
         </div>
 
-        <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg className="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
           </svg>
         </div>
 
-        <h2 className="text-2xl font-bold text-slate-800 mb-3">{t('browserNotSupported')}</h2>
-        <p className="text-slate-500 mb-6 leading-relaxed">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">{t('browserNotSupported')}</h2>
+        <p className="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
           {t('browserNotSupportedDesc')}
         </p>
 
-        <div className="bg-slate-50 rounded-xl p-5 mb-6 text-left">
-          <p className="text-sm font-semibold text-slate-700 mb-3">{t('pleasUseOne')}</p>
+        <div className="bg-slate-50 dark:bg-slate-700 rounded-xl p-5 mb-6 text-left">
+          <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3">{t('pleasUseOne')}</p>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <ChromeIcon />
-              <p className="font-medium text-slate-800">Google Chrome</p>
+              <p className="font-medium text-slate-800 dark:text-slate-100">Google Chrome</p>
             </div>
             <div className="flex items-center gap-3">
               <EdgeIcon />
-              <p className="font-medium text-slate-800">Microsoft Edge</p>
+              <p className="font-medium text-slate-800 dark:text-slate-100">Microsoft Edge</p>
             </div>
           </div>
         </div>
 
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-slate-400 dark:text-slate-500">
           {t('browserNoSupport')}
         </p>
       </div>

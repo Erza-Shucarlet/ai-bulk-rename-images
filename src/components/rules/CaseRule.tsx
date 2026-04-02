@@ -18,7 +18,7 @@ export default function CaseRule({ rule }: Props) {
 
   return (
     <div>
-      <label className="text-xs text-slate-500 mb-2 block">{t('conversionMode')}</label>
+      <label className="text-xs text-slate-500 dark:text-slate-400 mb-2 block">{t('conversionMode')}</label>
       <div className="flex gap-2">
         {options.map((opt) => (
           <button
@@ -27,11 +27,11 @@ export default function CaseRule({ rule }: Props) {
             className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
               rule.mode === opt.value
                 ? 'bg-blue-500 border-blue-500 text-white'
-                : 'border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50'
+                : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20'
             }`}
           >
             <div>{t(opt.labelKey)}</div>
-            <div className={`text-xs mt-0.5 font-normal ${rule.mode === opt.value ? 'text-blue-100' : 'text-slate-400'}`}>
+            <div className={`text-xs mt-0.5 font-normal ${rule.mode === opt.value ? 'text-blue-100' : 'text-slate-400 dark:text-slate-500'}`}>
               {opt.example}
             </div>
           </button>

@@ -14,7 +14,7 @@ export default function PrefixSuffixRule({ rule }: Props) {
 
   return (
     <div>
-      <label className="text-xs text-slate-500 mb-1 block">
+      <label className="text-xs text-slate-500 dark:text-slate-400 mb-1 block">
         {isPrefix ? t('prefixLabel') : t('suffixLabel')}
       </label>
       <input
@@ -22,7 +22,7 @@ export default function PrefixSuffixRule({ rule }: Props) {
         value={rule.value}
         onChange={(e) => updateRule(rule.id, { value: e.target.value })}
         placeholder={isPrefix ? t('prefixPlaceholder') : t('suffixPlaceholder')}
-        className="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30"
+        className="w-full px-3 py-1.5 text-sm border border-slate-200 dark:border-slate-600 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/30 bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200"
       />
     </div>
   );
