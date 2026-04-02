@@ -13,10 +13,10 @@ const translations = {
 
     // BrowserGuard
     browserNotSupported: 'Browser Not Supported',
-    browserNotSupportedDesc: 'This tool requires the File System Access API, which is currently only available in Chromium-based browsers.',
+    browserNotSupportedDesc: 'This tool is only available in Chromium-based browsers.',
     pleasUseOne: 'Please use one of these browsers:',
-    chromeVersion: 'Version 123 or later',
-    edgeVersion: 'Version 123 or later',
+    chromeVersion: '',
+    edgeVersion: '',
     browserNoSupport: 'Firefox, Safari, and other browsers do not support local filesystem write access',
 
     // DropZone
@@ -128,10 +128,10 @@ const translations = {
 
     // BrowserGuard
     browserNotSupported: '浏览器不支持',
-    browserNotSupportedDesc: '此工具需要 File System Access API，目前仅在基于 Chromium 的浏览器中可用。',
+    browserNotSupportedDesc: '此工具仅在基于 Chromium 的浏览器中可用。',
     pleasUseOne: '请使用以下浏览器之一：',
-    chromeVersion: '123 版本或更高',
-    edgeVersion: '123 版本或更高',
+    chromeVersion: '',
+    edgeVersion: '',
     browserNoSupport: 'Firefox、Safari 及其他浏览器不支持本地文件系统写入访问',
 
     // DropZone
@@ -241,10 +241,10 @@ const translations = {
 
     // BrowserGuard
     browserNotSupported: 'Браузер не поддерживается',
-    browserNotSupportedDesc: 'Инструмент требует File System Access API, который доступен только в браузерах на основе Chromium.',
+    browserNotSupportedDesc: 'Этот инструмент доступен только в браузерах на основе Chromium.',
     pleasUseOne: 'Пожалуйста, используйте один из этих браузеров:',
-    chromeVersion: 'Версия 123 или выше',
-    edgeVersion: 'Версия 123 или выше',
+    chromeVersion: '',
+    edgeVersion: '',
     browserNoSupport: 'Firefox, Safari и другие браузеры не поддерживают запись в локальную файловую систему',
 
     // DropZone
