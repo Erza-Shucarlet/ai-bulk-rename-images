@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.9] - 2026-04-02
+
+### Changed
+- 提升 EN 关键词密度：Bulk Rename Images / Rename Images / Rename Files
+- 优化 heroDesc、infoWhatText、infoAdv3、FAQ3、FAQ5 描述文字
+
+---
+
+## [1.0.8] - 2026-04-02
+
+### Added
+- 主内容区新增 H1 标题 + heroDesc 描述段落，修复无 H1 问题
+- Header logo 由 `<h1>` 改为 `<span>`，避免重复 H1
+- 新增 InfoSection 组件：介绍、优势列表、FAQ 手风琴，提升 text-HTML 比率
+- 三语言新增 heroDesc 及所有 InfoSection 翻译键
+
+---
+
+## [1.0.7] - 2026-04-02
+
+### Added
+- 接入 Google AdSense 三个手动广告位（关闭自动广告）
+  - 左侧边栏：slot 4991313315
+  - 右侧边栏：slot 5018504526
+  - 底部横幅：slot 9371645093
+- index.html 添加 AdSense 全局脚本
+- public/ads.txt 添加 AdSense 验证记录
+- Footer 添加「联系站长」mailto 链接，预填日期+项目名+版本号主题
+
+---
+
 ## [1.0.6] - 2026-04-02
 
 ### Added
