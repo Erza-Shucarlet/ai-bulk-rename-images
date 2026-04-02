@@ -5,37 +5,42 @@ interface BrowserGuardProps {
   children: React.ReactNode;
 }
 
-// Google Chrome 官方品牌色 SVG 图标
+// Google Chrome 品牌色图标（三色扇形环 + 蓝色中心）
 function ChromeIcon() {
   return (
     <svg viewBox="0 0 48 48" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="24" cy="24" r="10" fill="#fff"/>
-      <path d="M24 14a10 10 0 0 1 8.66 5H44a20 20 0 1 0 .02 10H32.66A10 10 0 1 1 24 14z" fill="#4285F4"/>
-      <path d="M24 14a10 10 0 0 1 8.66 5H44a20 20 0 0 0-20-20z" fill="#EA4335"/>
-      <path d="M4 24a20 20 0 0 0 15.34 19.4L12 32a10 10 0 0 1-8-8z" fill="#34A853"/>
-      <path d="M44 24a20 20 0 0 1-15.34 19.4L36 32a10 10 0 0 0 8-8z" fill="#FBBC05"/>
-      <circle cx="24" cy="24" r="7" fill="#fff"/>
-      <circle cx="24" cy="24" r="5.5" fill="#4285F4"/>
+      {/* 红色扇形（顶部 -90° → 30°） */}
+      <path d="M24 2 A22 22 0 0 1 43.05 35 L24 24 Z" fill="#EA4335"/>
+      {/* 黄色扇形（右下 30° → 150°） */}
+      <path d="M43.05 35 A22 22 0 0 1 4.95 35 L24 24 Z" fill="#FBBC05"/>
+      {/* 绿色扇形（左侧 150° → 270°） */}
+      <path d="M4.95 35 A22 22 0 0 1 24 2 L24 24 Z" fill="#34A853"/>
+      {/* 白色分隔环 */}
+      <circle cx="24" cy="24" r="13" fill="white"/>
+      {/* 蓝色中心圆 */}
+      <circle cx="24" cy="24" r="9" fill="#4285F4"/>
     </svg>
   );
 }
 
-// Microsoft Edge 官方品牌色 SVG 图标
+// Microsoft Edge 品牌色图标
 function EdgeIcon() {
   return (
     <svg viewBox="0 0 48 48" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="edge-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0C59A4"/>
-          <stop offset="100%" stopColor="#1B9DE2"/>
+        <linearGradient id="edge-a" x1="9" y1="6.3" x2="40.5" y2="44.1" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#0C59A4"/>
+          <stop offset="1" stopColor="#1B9DE2"/>
         </linearGradient>
-        <linearGradient id="edge-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1B9DE2"/>
-          <stop offset="100%" stopColor="#28BDEF"/>
+        <linearGradient id="edge-b" x1="18.6" y1="32.6" x2="37.6" y2="44.5" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#1B9DE2"/>
+          <stop offset="1" stopColor="#28CAFF"/>
         </linearGradient>
       </defs>
-      <path d="M42 24c0 9.94-8.06 18-18 18-3.07 0-5.96-.77-8.5-2.13C19.73 41.08 24 38 24 38s10-4 10-14c0-2.34-.55-4.55-1.53-6.5C35.56 19.14 42 21.1 42 24z" fill="url(#edge-grad-2)"/>
-      <path d="M24 6C13.51 6 5 14.51 5 25c0 4.43 1.53 8.5 4.08 11.72A18 18 0 0 0 24 42c9.94 0 18-8.06 18-18 0-2.9-6.44-4.86-9.53-6.5C33.45 19.45 34 21.66 34 24c0 10-10 14-10 14s-4.27 3.08-8.5 1.87A17.94 17.94 0 0 1 6 24c0-9.94 8.06-18 18-18 6.08 0 11.45 3.01 14.72 7.63C36.22 8.97 30.42 6 24 6z" fill="url(#edge-grad-1)"/>
+      {/* 主体波浪形 */}
+      <path d="M6 23C6 13.06 14.06 5 24 5c6.3 0 11.8 3.1 15.1 7.8 1.5 2.1 2.4 4.7 2.4 7.4 0 2-.8 4-2.2 5.5-1.6 1.6-3.8 2.3-6.1 2.3H22c-1.1 0-2 .9-2 2 0 .6.3 1.2.7 1.6.5.5 1.3 1.1 1.3 2.1 0 2.2-2.8 4.3-6 4.3-4.1 0-7.8-2.3-9.8-5.8C5.3 29.9 6 26.5 6 23z" fill="url(#edge-a)"/>
+      {/* 底部高光波浪 */}
+      <path d="M42 34c-1.5 5.5-6.4 10-13.1 11-6.8 1-13-2-16.3-7 3.1 2 7.1 3.3 11.4 2.6 6.4-1 10.7-6.2 10.7-12.6v-.8l6.9-2.4C42.4 27.1 43.4 30.8 42 34z" fill="url(#edge-b)"/>
     </svg>
   );
 }
