@@ -117,6 +117,28 @@ const translations = {
     // ExtensionRule
     newExtLabel: 'New extension (leave empty to remove extension)',
     newExtPlaceholder: 'e.g. jpg or .jpg',
+
+    // Footer
+    privacyPolicy: 'Privacy Policy',
+
+    // Privacy Policy page
+    privacyTitle: 'Privacy Policy',
+    privacyLastUpdated: 'Last updated: April 2, 2026',
+    privacyIntroTitle: 'Overview',
+    privacyIntroText: 'AI Bulk Rename Images & Files ("the Service") is a browser-based file renaming tool. This policy explains how we handle your data.',
+    privacyDataTitle: 'Data We Do NOT Collect',
+    privacyDataText: 'We do not collect, transmit, or store any of your files or filenames. All file operations are performed entirely within your browser using the File System Access API. Your files never leave your device.',
+    privacyLocalTitle: 'Local Processing Only',
+    privacyLocalText: 'The Service runs entirely client-side. No file content, metadata, or rename operations are sent to any server.',
+    privacyAdsTitle: 'Advertising',
+    privacyAdsText: 'This site uses Google AdSense to display advertisements. Google may use cookies and collect anonymized usage data to serve relevant ads. Please refer to Google\'s Privacy Policy for details.',
+    privacyAnalyticsTitle: 'Analytics',
+    privacyAnalyticsText: 'We may use anonymized analytics (e.g. page view counts via Cloudflare) to understand overall traffic. No personally identifiable information is collected.',
+    privacyCookiesTitle: 'Cookies',
+    privacyCookiesText: 'The Service itself does not set any cookies. Third-party services (Google AdSense) may set cookies for ad personalization.',
+    privacyContactTitle: 'Contact',
+    privacyContactText: 'If you have any questions about this Privacy Policy, please open an issue on our GitHub repository.',
+    privacyBackHome: '← Back to Home',
   },
 
   zh: {
@@ -230,6 +252,28 @@ const translations = {
     // ExtensionRule
     newExtLabel: '新扩展名（留空则删除扩展名）',
     newExtPlaceholder: '例如：jpg 或 .jpg',
+
+    // Footer
+    privacyPolicy: '隐私政策',
+
+    // Privacy Policy page
+    privacyTitle: '隐私政策',
+    privacyLastUpdated: '最后更新：2026年4月2日',
+    privacyIntroTitle: '概述',
+    privacyIntroText: 'AI Bulk Rename Images & Files（以下简称"本服务"）是一款基于浏览器的文件批量重命名工具。本政策说明我们如何处理您的数据。',
+    privacyDataTitle: '我们不收集的数据',
+    privacyDataText: '我们不收集、传输或存储您的任何文件或文件名。所有文件操作完全在您的浏览器内通过 File System Access API 完成，您的文件永远不会离开您的设备。',
+    privacyLocalTitle: '纯本地处理',
+    privacyLocalText: '本服务完全在客户端运行。不会将任何文件内容、元数据或重命名操作发送到任何服务器。',
+    privacyAdsTitle: '广告',
+    privacyAdsText: '本网站使用 Google AdSense 展示广告。Google 可能会使用 Cookie 并收集匿名使用数据以投放相关广告，详情请参阅 Google 隐私政策。',
+    privacyAnalyticsTitle: '统计分析',
+    privacyAnalyticsText: '我们可能通过 Cloudflare 等服务收集匿名统计数据（如页面访问量）以了解整体流量，不收集任何个人身份信息。',
+    privacyCookiesTitle: 'Cookie',
+    privacyCookiesText: '本服务本身不设置任何 Cookie。第三方服务（Google AdSense）可能会为广告个性化设置 Cookie。',
+    privacyContactTitle: '联系方式',
+    privacyContactText: '如果您对本隐私政策有任何疑问，请在我们的 GitHub 仓库提交 Issue。',
+    privacyBackHome: '← 返回首页',
   },
 
   ru: {
@@ -343,6 +387,28 @@ const translations = {
     // ExtensionRule
     newExtLabel: 'Новое расширение (оставьте пустым для удаления)',
     newExtPlaceholder: 'Напр. jpg или .jpg',
+
+    // Footer
+    privacyPolicy: 'Политика конфиденциальности',
+
+    // Privacy Policy page
+    privacyTitle: 'Политика конфиденциальности',
+    privacyLastUpdated: 'Последнее обновление: 2 апреля 2026 г.',
+    privacyIntroTitle: 'Обзор',
+    privacyIntroText: 'AI Bulk Rename Images & Files («Сервис») — браузерный инструмент для пакетного переименования файлов. Данная политика объясняет, как мы обращаемся с вашими данными.',
+    privacyDataTitle: 'Данные, которые мы НЕ собираем',
+    privacyDataText: 'Мы не собираем, не передаём и не храним ваши файлы или имена файлов. Все операции выполняются исключительно в вашем браузере через File System Access API. Ваши файлы никогда не покидают ваше устройство.',
+    privacyLocalTitle: 'Только локальная обработка',
+    privacyLocalText: 'Сервис работает полностью на стороне клиента. Никакое содержимое файлов, метаданные или операции переименования не отправляются на серверы.',
+    privacyAdsTitle: 'Реклама',
+    privacyAdsText: 'Сайт использует Google AdSense для показа рекламы. Google может использовать файлы cookie и собирать анонимные данные для показа релевантной рекламы. Подробнее см. Политику конфиденциальности Google.',
+    privacyAnalyticsTitle: 'Аналитика',
+    privacyAnalyticsText: 'Мы можем использовать анонимную аналитику (например, счётчик просмотров через Cloudflare) для анализа общего трафика. Персональные данные не собираются.',
+    privacyCookiesTitle: 'Файлы cookie',
+    privacyCookiesText: 'Сервис сам по себе не устанавливает файлы cookie. Сторонние сервисы (Google AdSense) могут устанавливать cookie для персонализации рекламы.',
+    privacyContactTitle: 'Контакты',
+    privacyContactText: 'Если у вас есть вопросы по данной Политике конфиденциальности, откройте Issue в нашем репозитории на GitHub.',
+    privacyBackHome: '← На главную',
   },
 } as const;
 

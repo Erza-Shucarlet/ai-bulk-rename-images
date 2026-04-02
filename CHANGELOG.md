@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.5] - 2026-04-02
+
+### Added
+- 新增隐私政策页面（/privacy），支持三语言
+- Footer 添加隐私政策链接
+- 添加 Cloudflare Pages `_redirects` 支持 SPA 路由
+
+---
+
 ## [1.0.4] - 2026-04-02
 
 ### Fixed

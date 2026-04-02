@@ -134,6 +134,8 @@ function App() {
             <footer className="text-center py-4 text-xs text-slate-300">
               {t('footer')}
               <span className="ml-3 opacity-50">v{__APP_VERSION__}</span>
+              <span className="mx-2 opacity-30">·</span>
+              <a href="/privacy" className="hover:text-slate-400 transition-colors">{t('privacyPolicy')}</a>
             </footer>
           </div>
 
