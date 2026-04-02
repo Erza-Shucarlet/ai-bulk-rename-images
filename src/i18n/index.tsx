@@ -349,6 +349,14 @@ const translations = {
 export type Lang = keyof typeof translations;
 export type TranslationKeys = keyof typeof translations.en;
 
+// 根据浏览器语言自动匹配支持的语言，默认英文
+function detectLang(): Lang {
+  const raw = navigator.language || 'en';
+  if (raw.startsWith('zh')) return 'zh';
+  if (raw.startsWith('ru')) return 'ru';
+  return 'en';
+}
+
 // ── Context ─────────────────────────────────────────────────────────────────
 
 interface I18nContextValue {
@@ -362,7 +370,7 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 // ── Provider ─────────────────────────────────────────────────────────────────
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>(detectLang);
 
   const t = (key: TranslationKeys): string => translations[lang][key];
 
