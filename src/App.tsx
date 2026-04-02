@@ -1,4 +1,5 @@
 import './index.css';
+import { useEffect } from 'react';
 import BrowserGuard from './components/BrowserGuard';
 import DropZone from './components/DropZone';
 import RulesPanel from './components/RulesPanel';
@@ -6,6 +7,9 @@ import PreviewTable from './components/PreviewTable';
 import ActionBar from './components/ActionBar';
 import { useI18n, type Lang } from './i18n';
 import { useTheme } from './context/ThemeContext';
+
+// 告知 TypeScript adsbygoogle 是全局变量
+declare const adsbygoogle: unknown[];
 
 function LanguageToggle() {
   const { lang, setLang } = useI18n();
@@ -61,34 +65,52 @@ function ThemeToggle() {
 
 /** 侧边广告位（左 / 右），宽 160px，在 xl 以下隐藏 */
 function SideAd({ side }: { side: 'left' | 'right' }) {
+  const slotId = side === 'left' ? '4991313315' : '5018504526';
+
+  useEffect(() => {
+    try {
+      (adsbygoogle as unknown[]).push({});
+    } catch (_) {
+      // 开发环境忽略
+    }
+  }, []);
+
   return (
     <aside className="hidden xl:flex w-40 shrink-0 pt-6">
       <div className="sticky top-6 w-full">
-        {/* 160×600 Wide Skyscraper */}
-        <div className="w-40 h-[600px] bg-slate-100 dark:bg-slate-800 border border-dashed border-slate-300 dark:border-slate-600 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 dark:text-slate-500">
-          <svg className="w-5 h-5 opacity-40" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 9.75h18M3 6.75h18" />
-          </svg>
-          <span className="text-[10px] font-medium tracking-wide uppercase opacity-50">Ad</span>
-          <span className="text-[9px] opacity-35">160 × 600</span>
-        </div>
-        {side === 'left' ? null : null}
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-4044456745316436"
+          data-ad-slot={slotId}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
       </div>
     </aside>
   );
 }
 
-/** 底部广告位，728×90 Leaderboard（响应式宽度） */
+/** 底部广告位，自适应横幅 */
 function BottomAd() {
+  useEffect(() => {
+    try {
+      (adsbygoogle as unknown[]).push({});
+    } catch (_) {
+      // 开发环境忽略
+    }
+  }, []);
+
   return (
     <div className="w-full flex justify-center py-4">
-      <div className="w-full max-w-[728px] h-[90px] bg-slate-100 dark:bg-slate-800 border border-dashed border-slate-300 dark:border-slate-600 rounded-xl flex items-center justify-center gap-3 text-slate-400 dark:text-slate-500">
-        <svg className="w-5 h-5 opacity-40" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 9.75h18M3 6.75h18" />
-        </svg>
-        <span className="text-[10px] font-medium tracking-wide uppercase opacity-50">Ad</span>
-        <span className="text-[9px] opacity-35">728 × 90</span>
-      </div>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-4044456745316436"
+        data-ad-slot="9371645093"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
     </div>
   );
 }
