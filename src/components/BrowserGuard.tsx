@@ -28,19 +28,31 @@ function EdgeIcon() {
   return (
     <svg viewBox="0 0 48 48" className="w-8 h-8" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="edge-a" x1="9" y1="6.3" x2="40.5" y2="44.1" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#0C59A4"/>
-          <stop offset="1" stopColor="#1B9DE2"/>
+        <linearGradient id="eg1" x1="24" y1="3" x2="24" y2="45" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#36C6F0"/>
+          <stop offset="0.5" stopColor="#1B7CD6"/>
+          <stop offset="1" stopColor="#0C3B8C"/>
         </linearGradient>
-        <linearGradient id="edge-b" x1="18.6" y1="32.6" x2="37.6" y2="44.5" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#1B9DE2"/>
-          <stop offset="1" stopColor="#28CAFF"/>
+        <linearGradient id="eg2" x1="14" y1="12" x2="42" y2="22" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#57D38C"/>
+          <stop offset="1" stopColor="#1BA557"/>
         </linearGradient>
+        <linearGradient id="eg3" x1="6" y1="28" x2="30" y2="46" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#1B7CD6"/>
+          <stop offset="1" stopColor="#0C3B8C"/>
+        </linearGradient>
+        <clipPath id="ec">
+          <circle cx="24" cy="24" r="22"/>
+        </clipPath>
       </defs>
-      {/* 主体波浪形 */}
-      <path d="M6 23C6 13.06 14.06 5 24 5c6.3 0 11.8 3.1 15.1 7.8 1.5 2.1 2.4 4.7 2.4 7.4 0 2-.8 4-2.2 5.5-1.6 1.6-3.8 2.3-6.1 2.3H22c-1.1 0-2 .9-2 2 0 .6.3 1.2.7 1.6.5.5 1.3 1.1 1.3 2.1 0 2.2-2.8 4.3-6 4.3-4.1 0-7.8-2.3-9.8-5.8C5.3 29.9 6 26.5 6 23z" fill="url(#edge-a)"/>
-      {/* 底部高光波浪 */}
-      <path d="M42 34c-1.5 5.5-6.4 10-13.1 11-6.8 1-13-2-16.3-7 3.1 2 7.1 3.3 11.4 2.6 6.4-1 10.7-6.2 10.7-12.6v-.8l6.9-2.4C42.4 27.1 43.4 30.8 42 34z" fill="url(#edge-b)"/>
+      {/* 蓝色主体 */}
+      <circle cx="24" cy="24" r="22" fill="url(#eg1)"/>
+      {/* 绿色上弧（右上角波浪区域） */}
+      <path d="M24 3C33.5 3 41.5 8.5 45 16.5 42.5 12.5 37.5 9.5 32 9.5 22 9.5 14 17.5 14 27.5c0 2 .3 4 .9 5.8C10.5 29.8 8 25.2 8 20 8 10.6 15.2 3 24 3z" fill="url(#eg2)" clipPath="url(#ec)"/>
+      {/* 白色椭圆（"e"字开口） */}
+      <ellipse cx="27" cy="26" rx="11" ry="7" fill="white" transform="rotate(-10 27 26)"/>
+      {/* 深色内卷（底部深蓝卷曲） */}
+      <path d="M16 33.5c2.5 5 8 8.5 14 8.5 8 0 14.5-6 15.8-13.8C44 34 40.5 40 34 42.5c-3 1.2-6.5 1.5-9.5.5-4-1.2-7-4.2-8.5-9.5z" fill="url(#eg3)" clipPath="url(#ec)"/>
     </svg>
   );
 }

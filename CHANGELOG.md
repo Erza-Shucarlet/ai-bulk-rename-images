@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.4] - 2026-04-02
+
+### Fixed
+- 修复 Microsoft Edge 图标，替换为正确的品牌色 SVG（蓝色主体 + 绿色上弧 + 白色椭圆开口 + 深色内卷）
+
+---
+
 ## [1.0.3] - 2026-04-02
 
 ### Fixed
