@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## [Unreleased]
+## [1.0.3] - 2026-04-02
 
-- 修正 BrowserGuard 描述文本，去掉版本号显示，更换 Chrome/Edge 品牌色 SVG 图标
+### Fixed
+- 简化浏览器不支持页面的描述文字（三语言同步）
+- 去掉 Chrome / Edge 版本号显示
+- Chrome 和 Edge 图标替换为品牌色 SVG
 
 ---
 
