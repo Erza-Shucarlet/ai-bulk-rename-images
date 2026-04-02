@@ -120,6 +120,7 @@ const translations = {
 
     // Footer
     privacyPolicy: 'Privacy Policy',
+    contactWebmaster: 'Contact',
 
     // Privacy Policy page
     privacyTitle: 'Privacy Policy',
@@ -255,6 +256,7 @@ const translations = {
 
     // Footer
     privacyPolicy: '隐私政策',
+    contactWebmaster: '联系站长',
 
     // Privacy Policy page
     privacyTitle: '隐私政策',
@@ -390,6 +392,7 @@ const translations = {
 
     // Footer
     privacyPolicy: 'Политика конфиденциальности',
+    contactWebmaster: 'Связаться',
 
     // Privacy Policy page
     privacyTitle: 'Политика конфиденциальности',

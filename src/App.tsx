@@ -118,6 +118,9 @@ function BottomAd() {
 function App() {
   const { t } = useI18n();
 
+  const today = new Date().toISOString().slice(0, 10);
+  const mailtoHref = `mailto:shucarlet@gmail.com?subject=${encodeURIComponent(`${today}_ai-bulk-rename-images_v${__APP_VERSION__}`)}`;
+
   return (
     <BrowserGuard>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
@@ -184,6 +187,8 @@ function App() {
               <span className="ml-3 opacity-50">v{__APP_VERSION__}</span>
               <span className="mx-2 opacity-30">·</span>
               <a href="/privacy" className="hover:text-slate-400 dark:hover:text-slate-400 transition-colors">{t('privacyPolicy')}</a>
+              <span className="mx-2 opacity-30">·</span>
+              <a href={mailtoHref} className="hover:text-slate-400 dark:hover:text-slate-400 transition-colors">{t('contactWebmaster')}</a>
             </footer>
           </div>
 
