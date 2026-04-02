@@ -5,6 +5,7 @@ import DropZone from './components/DropZone';
 import RulesPanel from './components/RulesPanel';
 import PreviewTable from './components/PreviewTable';
 import ActionBar from './components/ActionBar';
+import InfoSection from './components/InfoSection';
 import { useI18n, type Lang } from './i18n';
 import { useTheme } from './context/ThemeContext';
 
@@ -135,7 +136,7 @@ function App() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100">{t('h1')}</h1>
+                <span className="text-lg font-bold text-slate-800 dark:text-slate-100">{t('h1')}</span>
                 <p className="text-xs text-slate-400 dark:text-slate-500">{t('appSubtitle')}</p>
               </div>
             </div>
@@ -159,6 +160,12 @@ function App() {
           {/* 主内容区 */}
           <div className="flex-1 min-w-0">
             <main className="max-w-7xl mx-auto py-6">
+              {/* 页面 H1 标题 + 描述（SEO） */}
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1">{t('h1')}</h1>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{t('heroDesc')}</p>
+              </div>
+
               {/* Top: folder picker + rules */}
               <div className="grid grid-cols-12 gap-4 mb-4">
                 <div className="col-span-12 lg:col-span-3">
@@ -175,6 +182,11 @@ function App() {
               {/* Action bar */}
               <div className="mt-4">
                 <ActionBar />
+              </div>
+
+              {/* 信息区：介绍、优势、FAQ */}
+              <div className="mt-8 border-t border-slate-200 dark:border-slate-700 pt-8">
+                <InfoSection />
               </div>
             </main>
 

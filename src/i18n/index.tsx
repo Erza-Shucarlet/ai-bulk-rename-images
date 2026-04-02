@@ -10,6 +10,7 @@ const translations = {
     footer: 'All processing happens locally — no files are ever uploaded',
     // H1 for SEO
     h1: 'Bulk Rename Images & Files Instantly',
+    heroDesc: 'The fastest way to bulk rename images and rename files directly in your browser — no uploads, no login, no installation. Select a folder, build your rename rules, and rename images or files in seconds.',
 
     // BrowserGuard
     browserNotSupported: 'Browser Not Supported',
@@ -140,6 +141,28 @@ const translations = {
     privacyContactTitle: 'Contact',
     privacyContactText: 'If you have any questions about this Privacy Policy, please open an issue on our GitHub repository.',
     privacyBackHome: '← Back to Home',
+
+    // InfoSection
+    infoWhatTitle: 'What is BulkRenameImages?',
+    infoWhatText: 'BulkRenameImages is a free online tool to bulk rename images and rename files instantly in your browser. Whether you need to rename images with sequential numbering, rename files using find-and-replace, add prefixes or suffixes, or change file extensions across hundreds of files at once — BulkRenameImages handles it all. No login, no file uploads, and no installation required. Your files never leave your device.',
+    infoAdvTitle: 'Advantages of BulkRenameImages',
+    infoAdv1: '100% Local & Private — Files never leave your device. All operations run entirely in your browser.',
+    infoAdv2: 'No Login Required — Start renaming immediately without creating an account.',
+    infoAdv3: 'Powerful Rename Rules — Bulk rename images and files with Find & Replace (regex), Prefix/Suffix, Case conversion, Sequence Numbering, and Extension change.',
+    infoAdv4: 'Real-Time Preview — See exactly how your files will be renamed before applying any changes.',
+    infoAdv5: 'Drag-to-Reorder Rules — Stack and reorder multiple rules to build complex rename workflows.',
+    infoAdv6: 'Multilingual Interface — Available in English, Chinese, and Russian.',
+    infoFaqTitle: 'Frequently Asked Questions',
+    infoFaq1Q: 'Which browsers are supported?',
+    infoFaq1A: 'Chrome 123+ and Microsoft Edge 123+. The tool requires the File System Access API which is only available in Chromium-based browsers.',
+    infoFaq2Q: 'Is it safe to use?',
+    infoFaq2A: 'Absolutely. All file processing happens locally in your browser. No files, filenames, or any data are ever uploaded to a server.',
+    infoFaq3Q: 'Can I use it to rename files other than images?',
+    infoFaq3A: 'Yes! While the name highlights bulk rename images, the tool works equally well to rename files of any type — documents, videos, audio files, PDFs, and more. Any file in a folder can be renamed.',
+    infoFaq4Q: 'Is there a limit on the number of files?',
+    infoFaq4A: 'There is no hard limit. Performance depends on your browser and device, but it handles hundreds of files with ease.',
+    infoFaq5Q: 'Is it free to bulk rename images and files?',
+    infoFaq5A: 'Yes, completely free to use with no hidden fees or subscriptions. Bulk rename images, rename files, and manage your whole folder at no cost.',
   },
 
   zh: {
@@ -148,6 +171,7 @@ const translations = {
     browserBadge: '仅支持 Chrome / Edge 123+',
     footer: '文件处理完全在本地完成，不上传任何数据',
     h1: '批量重命名图片与文件',
+    heroDesc: '免费、保护隐私的浏览器端批量重命名工具，无需上传文件、无需登录、无需安装。选择文件夹，配置规则，一键完成。',
 
     // BrowserGuard
     browserNotSupported: '浏览器不支持',
@@ -276,6 +300,28 @@ const translations = {
     privacyContactTitle: '联系方式',
     privacyContactText: '如果您对本隐私政策有任何疑问，请在我们的 GitHub 仓库提交 Issue。',
     privacyBackHome: '← 返回首页',
+
+    // InfoSection
+    infoWhatTitle: 'BulkRenameImages 是什么？',
+    infoWhatText: 'BulkRenameImages 是一款免费的浏览器端文件批量重命名工具，无需登录、无需上传文件、无需安装任何软件，即可在浏览器中即时批量重命名图片和文件。它借助浏览器内置的 File System Access API，直接在您的设备上完成所有操作。',
+    infoAdvTitle: 'BulkRenameImages 的优势',
+    infoAdv1: '完全本地化，保护隐私 — 文件永远不会离开您的设备，所有操作均在浏览器内完成。',
+    infoAdv2: '无需注册登录 — 打开即用，无需创建账户。',
+    infoAdv3: '强大的重命名规则 — 支持查找替换（含正则）、添加前后缀、大小写转换、序列化编号、修改扩展名。',
+    infoAdv4: '实时预览 — 执行前可预览每个文件的重命名结果，避免误操作。',
+    infoAdv5: '拖拽调整规则顺序 — 多条规则自由叠加，构建复杂的批量重命名流程。',
+    infoAdv6: '多语言界面 — 支持英文、中文和俄文。',
+    infoFaqTitle: '常见问题',
+    infoFaq1Q: '支持哪些浏览器？',
+    infoFaq1A: 'Chrome 123+ 和 Microsoft Edge 123+。此工具依赖 File System Access API，目前仅 Chromium 内核浏览器支持。',
+    infoFaq2Q: '使用安全吗？',
+    infoFaq2A: '非常安全。所有文件处理均在本地浏览器内完成，文件名和文件内容不会上传到任何服务器。',
+    infoFaq3Q: '只能重命名图片吗？',
+    infoFaq3A: '不是。虽然名称中含有"图片"，但本工具支持任意文件类型，包括文档、视频、音频等。',
+    infoFaq4Q: '文件数量有限制吗？',
+    infoFaq4A: '没有硬性限制，处理能力取决于您的浏览器和设备性能，通常可轻松处理数百个文件。',
+    infoFaq5Q: '需要付费吗？',
+    infoFaq5A: '完全免费，无任何隐藏费用。',
   },
 
   ru: {
@@ -284,6 +330,7 @@ const translations = {
     browserBadge: 'Только Chrome / Edge 123+',
     footer: 'Все операции выполняются локально — файлы никуда не загружаются',
     h1: 'Массовое переименование файлов и изображений',
+    heroDesc: 'Бесплатный инструмент для пакетного переименования файлов прямо в браузере. Без загрузки файлов, без регистрации, без установки — выберите папку, настройте правила и применяйте.',
 
     // BrowserGuard
     browserNotSupported: 'Браузер не поддерживается',
@@ -412,6 +459,28 @@ const translations = {
     privacyContactTitle: 'Контакты',
     privacyContactText: 'Если у вас есть вопросы по данной Политике конфиденциальности, откройте Issue в нашем репозитории на GitHub.',
     privacyBackHome: '← На главную',
+
+    // InfoSection
+    infoWhatTitle: 'Что такое BulkRenameImages?',
+    infoWhatText: 'BulkRenameImages — бесплатный браузерный инструмент для пакетного переименования файлов. Работает без регистрации, без загрузки файлов и без установки. Использует File System Access API браузера для работы непосредственно с файлами на вашем устройстве.',
+    infoAdvTitle: 'Преимущества BulkRenameImages',
+    infoAdv1: 'Полностью локальная обработка — файлы никогда не покидают ваше устройство, все операции выполняются в браузере.',
+    infoAdv2: 'Без регистрации — начните переименование сразу, без создания аккаунта.',
+    infoAdv3: 'Мощные правила — поиск и замена (с regex), префикс/суффикс, изменение регистра, нумерация, смена расширения.',
+    infoAdv4: 'Предпросмотр в реальном времени — видите результат до применения изменений.',
+    infoAdv5: 'Перетаскивание правил — создавайте сложные цепочки правил в нужном порядке.',
+    infoAdv6: 'Многоязычный интерфейс — доступен на английском, китайском и русском языках.',
+    infoFaqTitle: 'Часто задаваемые вопросы',
+    infoFaq1Q: 'Какие браузеры поддерживаются?',
+    infoFaq1A: 'Chrome 123+ и Microsoft Edge 123+. Инструмент требует File System Access API, доступный только в браузерах на основе Chromium.',
+    infoFaq2Q: 'Безопасно ли использовать?',
+    infoFaq2A: 'Абсолютно. Все операции выполняются локально в браузере, никакие файлы и данные не отправляются на серверы.',
+    infoFaq3Q: 'Можно ли переименовывать не только изображения?',
+    infoFaq3A: 'Да! Несмотря на название, инструмент работает с любыми типами файлов — документами, видео, аудио и другими.',
+    infoFaq4Q: 'Есть ли ограничение на количество файлов?',
+    infoFaq4A: 'Жёсткого ограничения нет. Возможности зависят от браузера и устройства, обычно без проблем обрабатываются сотни файлов.',
+    infoFaq5Q: 'Это бесплатно?',
+    infoFaq5A: 'Да, полностью бесплатно, без скрытых платежей и подписок.',
   },
 } as const;
 
