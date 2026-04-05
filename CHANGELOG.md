@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.2.2] - 2026-04-05
+
+### Fixed
+- index.html 静态内容扩充至 350+ 词（添加 What is / Advantages / FAQ），修复 low word count SEO 问题
+
+---
+
 ## [1.2.1] - 2026-04-05
 
 ### Fixed
