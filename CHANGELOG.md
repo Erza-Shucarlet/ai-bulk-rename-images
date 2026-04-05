@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.2] - 2026-04-05
+
+### Fixed
+- 改用 Vite MPA 双入口，/privacy 路由使用独立 privacy.html（修复 duplicate title/meta description）
+- index.html 和 privacy.html 内嵌静态 h1 和描述文字，爬虫不执行 JS 也能读取（修复 missing h1、low word count、low text ratio）
+- 更新 _redirects：/privacy 指向 privacy.html，其余路由仍走 index.html
+
+---
+
 ## [1.1.1] - 2026-04-05
 
 ### Changed
