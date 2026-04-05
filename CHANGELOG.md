@@ -7,16 +7,16 @@ All notable changes to this project will be documented in this file.
 ## [1.1.1] - 2026-04-05
 
 ### Changed
-- 瀏覽器標籤頁 favicon 替換為胖黃鴨圖片（logo.jpeg）
+- 浏览器标签页 favicon 替换为胖黄鸭图片（logo.jpeg）
 
 ---
 
 ## [1.1.0] - 2026-04-05
 
 ### Added
-- 新增繁體中文（zh-TW）語言支援，涵蓋全部 UI 文字
-- Header 語言切換新增「繁」按鈕（EN / 中 / 繁 / РУ）
-- `detectLang()` 自動識別 `zh-TW`/`zh-HK`/`zh-MO` 並切換至繁體
+- 新增繁体中文（zh-TW）语言支持，覆盖全部 UI 文字
+- Header 语言切换新增「繁」按钮（EN / 中 / 繁 / РУ）
+- `detectLang()` 自动识别 `zh-TW`/`zh-HK`/`zh-MO` 并切换至繁体
 
 ---
 
