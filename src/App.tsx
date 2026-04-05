@@ -8,6 +8,7 @@ import ActionBar from './components/ActionBar';
 import InfoSection from './components/InfoSection';
 import { useI18n, type Lang } from './i18n';
 import { useTheme } from './context/ThemeContext';
+import { useRenameStore } from './store/useRenameStore';
 
 // 告知 TypeScript adsbygoogle 是全局变量
 declare const adsbygoogle: unknown[];
@@ -119,6 +120,8 @@ function BottomAd() {
 
 function App() {
   const { t } = useI18n();
+  const files = useRenameStore((s) => s.files);
+  const hasFiles = files.length > 0;
 
   const today = new Date().toISOString().slice(0, 10);
   const mailtoHref = `mailto:shucarlet@gmail.com?subject=${encodeURIComponent(`${today}_ai-bulk-rename-images_v${__APP_VERSION__}`)}`;
@@ -129,8 +132,8 @@ function App() {
         {/* Header */}
         <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-6 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            {/* Logo + Title */}
-            <div className="flex items-center gap-3">
+            {/* Logo + Title（点击返回首页） */}
+            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
@@ -140,7 +143,7 @@ function App() {
                 <span className="text-lg font-bold text-slate-800 dark:text-slate-100">{t('h1')}</span>
                 <p className="text-xs text-slate-400 dark:text-slate-500">{t('appSubtitle')}</p>
               </div>
-            </div>
+            </a>
 
             {/* 右上角：深色模式切换 + 语言切换 + 浏览器徽章 */}
             <div className="flex items-center gap-3">
@@ -167,26 +170,35 @@ function App() {
                 <p className="text-sm text-slate-500 dark:text-slate-400">{t('heroDesc')}</p>
               </div>
 
-              {/* Top: folder picker + rules */}
-              <div className="grid grid-cols-12 gap-4 mb-4">
-                <div className="col-span-12 lg:col-span-3">
+              {/* 未选择文件夹：全宽显示 DropZone */}
+              {!hasFiles ? (
+                <div className="py-4">
                   <DropZone />
                 </div>
-                <div className="col-span-12 lg:col-span-9">
-                  <RulesPanel />
-                </div>
-              </div>
+              ) : (
+                <>
+                  {/* Top: folder picker + rules */}
+                  <div className="grid grid-cols-12 gap-4 mb-4">
+                    <div className="col-span-12 lg:col-span-3">
+                      <DropZone />
+                    </div>
+                    <div className="col-span-12 lg:col-span-9">
+                      <RulesPanel />
+                    </div>
+                  </div>
 
-              {/* Preview table */}
-              <PreviewTable />
+                  {/* Preview table */}
+                  <PreviewTable />
 
-              {/* Action bar */}
-              <div className="mt-4">
-                <ActionBar />
-              </div>
+                  {/* Action bar */}
+                  <div className="mt-4">
+                    <ActionBar />
+                  </div>
+                </>
+              )}
 
               {/* 信息区：介绍、优势、FAQ */}
-              <div className="mt-8 border-t border-slate-200 dark:border-slate-700 pt-8">
+              <div className={`border-t border-slate-200 dark:border-slate-700 pt-8 ${hasFiles ? 'mt-8' : 'mt-32'}`}>
                 <InfoSection />
               </div>
             </main>

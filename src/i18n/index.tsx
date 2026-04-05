@@ -25,7 +25,7 @@ const translations = {
     files: 'files',
     reading: 'Reading...',
     changeFolder: 'Change Folder',
-    selectFolder: 'Select Folder',
+    selectFolder: 'Select a Folder to Start',
     grantAccess: 'Grant access to read file list',
     folderReadError: 'Failed to read folder. Please try again.',
 
@@ -186,7 +186,7 @@ const translations = {
     files: '个文件',
     reading: '读取中...',
     changeFolder: '更换文件夹',
-    selectFolder: '选择文件夹',
+    selectFolder: '选择文件夹以开始',
     grantAccess: '授权读取文件列表',
     folderReadError: '读取文件夹失败，请重试。',
 
@@ -345,7 +345,7 @@ const translations = {
     files: '個檔案',
     reading: '讀取中...',
     changeFolder: '更換資料夾',
-    selectFolder: '選擇資料夾',
+    selectFolder: '選擇資料夾以開始',
     grantAccess: '授權讀取檔案清單',
     folderReadError: '讀取資料夾失敗，請重試。',
 
@@ -504,7 +504,7 @@ const translations = {
     files: 'файлов',
     reading: 'Загрузка...',
     changeFolder: 'Сменить папку',
-    selectFolder: 'Выбрать папку',
+    selectFolder: 'Выбрать папку для начала',
     grantAccess: 'Разрешить доступ к списку файлов',
     folderReadError: 'Не удалось прочитать папку. Попробуйте ещё раз.',
 
