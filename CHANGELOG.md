@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.2.3] - 2026-04-05
+
+### Fixed
+- 将 index.html 静态 SEO 内容移入 `<noscript>`，消除页面加载时的纯文本闪烁
+
+---
+
 ## [1.2.2] - 2026-04-05
 
 ### Fixed
