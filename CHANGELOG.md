@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.3.2] - 2026-04-05
+
+### Fixed
+- 预览表格「状态」列固定在右侧（sticky），横向滚动时不随内容移动
+
+---
+
 ## [1.3.1] - 2026-04-05
 
 ### Added

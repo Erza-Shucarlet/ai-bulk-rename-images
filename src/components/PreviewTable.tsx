@@ -116,7 +116,7 @@ export default function PreviewTable() {
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">{t('originalName')}</th>
               <th className="px-4 py-2 w-6"></th>
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">{t('newName')}</th>
-              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-16 whitespace-nowrap">{t('status')}</th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-16 whitespace-nowrap sticky right-0 bg-slate-50 dark:bg-slate-700/50">{t('status')}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50 dark:divide-slate-700">
@@ -126,7 +126,7 @@ export default function PreviewTable() {
               return (
                 <tr
                   key={entry.original + i}
-                  className={`transition-colors ${
+                  className={`group transition-colors ${
                     entry.skipped
                       ? 'opacity-40 hover:opacity-60'
                       : 'hover:bg-slate-50/50 dark:hover:bg-slate-700/30'
@@ -163,7 +163,7 @@ export default function PreviewTable() {
                       </span>
                     )}
                   </td>
-                  <td className="px-4 py-2.5">
+                  <td className="px-4 py-2.5 sticky right-0 bg-white dark:bg-slate-800 group-hover:bg-slate-50/50 dark:group-hover:bg-slate-700/30 transition-colors">
                     {entry.skipped ? (
                       <span className="text-slate-300 dark:text-slate-600 text-xs">—</span>
                     ) : entry.error ? (
