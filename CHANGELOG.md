@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.3] - 2026-04-05
+
+### Changed
+- favicon 替换为透明背景版胖黄鸭（logo.png）
+
+---
+
 ## [1.1.2] - 2026-04-05
 
 ### Fixed
