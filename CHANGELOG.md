@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.0] - 2026-04-05
+
+### Added
+- 新增繁體中文（zh-TW）語言支援，涵蓋全部 UI 文字
+- Header 語言切換新增「繁」按鈕（EN / 中 / 繁 / РУ）
+- `detectLang()` 自動識別 `zh-TW`/`zh-HK`/`zh-MO` 並切換至繁體
+
+---
+
 ## [1.0.10] - 2026-04-05
 
 ### Fixed

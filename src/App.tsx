@@ -18,6 +18,7 @@ function LanguageToggle() {
   const options: { value: Lang; label: string }[] = [
     { value: 'en', label: 'EN' },
     { value: 'zh', label: '中' },
+    { value: 'zh-TW', label: '繁' },
     { value: 'ru', label: 'РУ' },
   ];
 

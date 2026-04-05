@@ -324,6 +324,165 @@ const translations = {
     infoFaq5A: '完全免费，无任何隐藏费用。',
   },
 
+  'zh-TW': {
+    // App
+    appSubtitle: '本機批次檔案重新命名工具',
+    browserBadge: '僅支援 Chrome / Edge 123+',
+    footer: '檔案處理完全在本機完成，不上傳任何資料',
+    h1: '批次重新命名圖片與檔案',
+    heroDesc: '免費、保護隱私的瀏覽器端批次重新命名工具，無需上傳檔案、無需登入、無需安裝。選擇資料夾，設定規則，一鍵完成。',
+
+    // BrowserGuard
+    browserNotSupported: '瀏覽器不支援',
+    browserNotSupportedDesc: '此工具僅在基於 Chromium 的瀏覽器中可用。',
+    pleasUseOne: '請使用以下其中一款瀏覽器：',
+    chromeVersion: '',
+    edgeVersion: '',
+    browserNoSupport: 'Firefox、Safari 及其他瀏覽器不支援本機檔案系統寫入存取',
+
+    // DropZone
+    folderLabel: '資料夾',
+    files: '個檔案',
+    reading: '讀取中...',
+    changeFolder: '更換資料夾',
+    selectFolder: '選擇資料夾',
+    grantAccess: '授權讀取檔案清單',
+    folderReadError: '讀取資料夾失敗，請重試。',
+
+    // RulesPanel
+    renameRules: '重新命名規則',
+    rulesTopToBottom: '規則從上到下依序執行',
+    addRule: '新增規則',
+    dragToReorder: '拖曳排序',
+    removeRule: '刪除規則',
+    noRulesYet: '尚無規則',
+    clickToAddRule: '點擊上方按鈕新增規則',
+    ruleLabelReplace: '尋找取代',
+    ruleLabelPrefix: '前綴',
+    ruleLabelSuffix: '後綴',
+    ruleLabelCase: '大小寫',
+    ruleLabelSequence: '序列化',
+    ruleLabelExtension: '副檔名',
+    ruleOptReplaceLabel: '尋找取代',
+    ruleOptReplaceDesc: '取代或刪除字元（支援正規表示式）',
+    ruleOptPrefixLabel: '新增前綴',
+    ruleOptPrefixDesc: '在檔名開頭新增文字',
+    ruleOptSuffixLabel: '新增後綴',
+    ruleOptSuffixDesc: '在檔名結尾新增文字',
+    ruleOptCaseLabel: '大小寫轉換',
+    ruleOptCaseDesc: '轉換為大寫、小寫或首字母大寫',
+    ruleOptSequenceLabel: '序列化編號',
+    ruleOptSequenceDesc: '新增編號（001, 002...）',
+    ruleOptExtensionLabel: '修改副檔名',
+    ruleOptExtensionDesc: '修改檔案的副檔名',
+
+    // PreviewTable
+    preview: '預覽',
+    willBeRenamed: '將被重新命名',
+    nameConflict: '重名衝突',
+    nameConflicts: '重名衝突',
+    ruleError: '規則錯誤',
+    ruleErrors: '規則錯誤',
+    originalName: '原始檔名',
+    newName: '新檔名',
+    status: '狀態',
+    selectFolderFirst: '請先選擇資料夾',
+    errorLabel: '錯誤',
+    conflictLabel: '衝突',
+
+    // ActionBar
+    results: '執行結果',
+    succeeded: '成功',
+    failed: '失敗',
+    renaming: '重新命名中...',
+    resetRules: '重置規則',
+    conflictsWillBeSkipped: '個重名衝突將被略過',
+    applyRename: '確認執行',
+    processing: '執行中...',
+    browserUpgradeAlert: '您的瀏覽器版本不支援檔案重新命名 API，請升級至 Chrome 123 或更高版本。',
+
+    // ReplaceRule
+    findLabel: '尋找',
+    regexPlaceholder: '正規表示式...',
+    findPlaceholder: '要尋找的文字...',
+    replaceLabel: '取代為（留空則刪除）',
+    replacePlaceholder: '取代文字...',
+    invalidRegex: '無效的正規表示式',
+    useRegex: '使用正規表示式',
+    caseSensitive: '區分大小寫',
+
+    // PrefixSuffixRule
+    prefixLabel: '在檔名開頭新增',
+    suffixLabel: '在檔名結尾新增（副檔名之前）',
+    prefixPlaceholder: '例如：2024_',
+    suffixPlaceholder: '例如：_final',
+
+    // CaseRule
+    conversionMode: '轉換模式',
+    caseLower: '全小寫',
+    caseUpper: '全大寫',
+    caseTitle: '首字母大寫',
+
+    // SequenceRule
+    startNumber: '起始數字',
+    step: '步長',
+    minDigits: '最小位數',
+    separator: '分隔符',
+    position: '位置',
+    seqPrefix: '前綴',
+    seqSuffix: '後綴',
+    example: '範例：',
+
+    // ExtensionRule
+    newExtLabel: '新副檔名（留空則移除副檔名）',
+    newExtPlaceholder: '例如：jpg 或 .jpg',
+
+    // Footer
+    privacyPolicy: '隱私權政策',
+    contactWebmaster: '聯絡站長',
+
+    // Privacy Policy page
+    privacyTitle: '隱私權政策',
+    privacyLastUpdated: '最後更新：2026年4月2日',
+    privacyIntroTitle: '概述',
+    privacyIntroText: 'AI Bulk Rename Images & Files（以下簡稱「本服務」）是一款基於瀏覽器的檔案批次重新命名工具。本政策說明我們如何處理您的資料。',
+    privacyDataTitle: '我們不收集的資料',
+    privacyDataText: '我們不收集、傳輸或儲存您的任何檔案或檔名。所有檔案操作完全在您的瀏覽器內透過 File System Access API 完成，您的檔案永遠不會離開您的裝置。',
+    privacyLocalTitle: '純本機處理',
+    privacyLocalText: '本服務完全在用戶端執行。不會將任何檔案內容、中繼資料或重新命名操作傳送至任何伺服器。',
+    privacyAdsTitle: '廣告',
+    privacyAdsText: '本網站使用 Google AdSense 展示廣告。Google 可能會使用 Cookie 並收集匿名使用資料以投放相關廣告，詳情請參閱 Google 隱私權政策。',
+    privacyAnalyticsTitle: '統計分析',
+    privacyAnalyticsText: '我們可能透過 Cloudflare 等服務收集匿名統計資料（如頁面瀏覽量）以了解整體流量，不收集任何個人身分識別資訊。',
+    privacyCookiesTitle: 'Cookie',
+    privacyCookiesText: '本服務本身不設定任何 Cookie。第三方服務（Google AdSense）可能會為廣告個人化設定 Cookie。',
+    privacyContactTitle: '聯絡方式',
+    privacyContactText: '如果您對本隱私權政策有任何疑問，請在我們的 GitHub 儲存庫提交 Issue。',
+    privacyBackHome: '← 返回首頁',
+
+    // InfoSection
+    infoWhatTitle: 'BulkRenameImages 是什麼？',
+    infoWhatText: 'BulkRenameImages 是一款免費的瀏覽器端檔案批次重新命名工具，無需登入、無需上傳檔案、無需安裝任何軟體，即可在瀏覽器中即時批次重新命名圖片和檔案。它借助瀏覽器內建的 File System Access API，直接在您的裝置上完成所有操作。',
+    infoAdvTitle: 'BulkRenameImages 的優勢',
+    infoAdv1: '完全本機化，保護隱私 — 檔案永遠不會離開您的裝置，所有操作均在瀏覽器內完成。',
+    infoAdv2: '無需註冊登入 — 開啟即用，無需建立帳號。',
+    infoAdv3: '強大的重新命名規則 — 支援尋找取代（含正規表示式）、新增前後綴、大小寫轉換、序列化編號、修改副檔名。',
+    infoAdv4: '即時預覽 — 執行前可預覽每個檔案的重新命名結果，避免誤操作。',
+    infoAdv5: '拖曳調整規則順序 — 多條規則自由疊加，建構複雜的批次重新命名流程。',
+    infoAdv6: '多語言介面 — 支援英文、簡體中文、繁體中文和俄文。',
+    infoFaqTitle: '常見問題',
+    infoFaq1Q: '支援哪些瀏覽器？',
+    infoFaq1A: 'Chrome 123+ 和 Microsoft Edge 123+。此工具依賴 File System Access API，目前僅 Chromium 核心瀏覽器支援。',
+    infoFaq2Q: '使用安全嗎？',
+    infoFaq2A: '非常安全。所有檔案處理均在本機瀏覽器內完成，檔名和檔案內容不會上傳至任何伺服器。',
+    infoFaq3Q: '只能重新命名圖片嗎？',
+    infoFaq3A: '不是。雖然名稱中含有「圖片」，但本工具支援任意檔案類型，包括文件、影片、音訊等。',
+    infoFaq4Q: '檔案數量有限制嗎？',
+    infoFaq4A: '沒有硬性限制，處理能力取決於您的瀏覽器和裝置效能，通常可輕鬆處理數百個檔案。',
+    infoFaq5Q: '需要付費嗎？',
+    infoFaq5A: '完全免費，無任何隱藏費用。',
+  },
+
   ru: {
     // App
     appSubtitle: 'Пакетное переименование файлов прямо в браузере',
@@ -490,6 +649,7 @@ export type TranslationKeys = keyof typeof translations.en;
 // 根据浏览器语言自动匹配支持的语言，默认英文
 function detectLang(): Lang {
   const raw = navigator.language || 'en';
+  if (raw === 'zh-TW' || raw === 'zh-HK' || raw === 'zh-MO') return 'zh-TW';
   if (raw.startsWith('zh')) return 'zh';
   if (raw.startsWith('ru')) return 'ru';
   return 'en';
