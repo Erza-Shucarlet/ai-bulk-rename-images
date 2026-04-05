@@ -1,9 +1,40 @@
+import { useRef, useState } from 'react';
 import { useRenameStore } from '../store/useRenameStore';
 import { useI18n } from '../i18n';
 
 export default function PreviewTable() {
   const { previews, files, selectedFiles, toggleFileSelection, toggleSelectAll } = useRenameStore();
   const { t } = useI18n();
+
+  // 拖拽横向滚动
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const dragState = useRef({ dragging: false, startX: 0, startScrollLeft: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    // 只响应左键，且不来自 checkbox/button
+    if (e.button !== 0) return;
+    const target = e.target as HTMLElement;
+    if (target.closest('input, button')) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    dragState.current = { dragging: true, startX: e.clientX, startScrollLeft: el.scrollLeft };
+    setIsDragging(true);
+    e.preventDefault();
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!dragState.current.dragging) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const dx = e.clientX - dragState.current.startX;
+    el.scrollLeft = dragState.current.startScrollLeft - dx;
+  };
+
+  const onMouseUp = () => {
+    dragState.current.dragging = false;
+    setIsDragging(false);
+  };
 
   if (files.length === 0) {
     return (
@@ -57,9 +88,16 @@ export default function PreviewTable() {
         </div>
       </div>
 
-      {/* 表格 */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+      {/* 表格：支持拖拽横向滚动 */}
+      <div
+        ref={scrollRef}
+        className={`overflow-x-auto select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+      >
+        <table className="text-sm" style={{ minWidth: '100%', tableLayout: 'auto' }}>
           <thead>
             <tr className="bg-slate-50 dark:bg-slate-700/50">
               <th className="px-3 py-2 w-8">
@@ -75,10 +113,10 @@ export default function PreviewTable() {
                 />
               </th>
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-8">#</th>
-              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500">{t('originalName')}</th>
-              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-6"></th>
-              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500">{t('newName')}</th>
-              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-16">{t('status')}</th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">{t('originalName')}</th>
+              <th className="px-4 py-2 w-6"></th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 whitespace-nowrap">{t('newName')}</th>
+              <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-16 whitespace-nowrap">{t('status')}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50 dark:divide-slate-700">
@@ -88,12 +126,12 @@ export default function PreviewTable() {
               return (
                 <tr
                   key={entry.original + i}
-                  className={`transition-colors cursor-pointer ${
+                  className={`transition-colors ${
                     entry.skipped
                       ? 'opacity-40 hover:opacity-60'
                       : 'hover:bg-slate-50/50 dark:hover:bg-slate-700/30'
-                  }`}
-                  onClick={() => toggleFileSelection(entry.original)}
+                  } ${isDragging ? '' : 'cursor-pointer'}`}
+                  onClick={() => { if (!isDragging) toggleFileSelection(entry.original); }}
                 >
                   <td className="px-3 py-2.5" onClick={(e) => e.stopPropagation()}>
                     <input
@@ -104,10 +142,8 @@ export default function PreviewTable() {
                     />
                   </td>
                   <td className="px-4 py-2.5 text-slate-300 dark:text-slate-600 text-xs">{i + 1}</td>
-                  <td className="px-4 py-2.5 font-mono text-slate-600 dark:text-slate-300 max-w-xs">
-                    <span className="truncate block" title={entry.original}>
-                      {entry.original}
-                    </span>
+                  <td className="px-4 py-2.5 font-mono text-slate-600 dark:text-slate-300 whitespace-nowrap">
+                    {entry.original}
                   </td>
                   <td className="px-2 py-2.5 text-slate-300 dark:text-slate-600">
                     {changed && (
@@ -116,16 +152,13 @@ export default function PreviewTable() {
                       </svg>
                     )}
                   </td>
-                  <td className="px-4 py-2.5 font-mono max-w-xs">
+                  <td className="px-4 py-2.5 font-mono whitespace-nowrap">
                     {entry.error ? (
                       <span className="text-slate-400 dark:text-slate-500 text-xs">{entry.original}</span>
                     ) : entry.skipped ? (
                       <span className="text-slate-400 dark:text-slate-500 text-xs">{entry.original}</span>
                     ) : (
-                      <span
-                        className={`truncate block ${changed ? 'text-blue-600 font-medium' : 'text-slate-400 dark:text-slate-500'}`}
-                        title={entry.preview}
-                      >
+                      <span className={changed ? 'text-blue-600 font-medium' : 'text-slate-400 dark:text-slate-500'}>
                         {entry.preview}
                       </span>
                     )}
