@@ -71,6 +71,8 @@ const translations = {
     selectFolderFirst: 'Select a folder to get started',
     errorLabel: 'Error',
     conflictLabel: 'Conflict',
+    selected: 'selected',
+    toggleSelectAll: 'Select / Deselect All',
 
     // ActionBar
     results: 'Results',
@@ -82,6 +84,8 @@ const translations = {
     applyRename: 'Apply Rename',
     processing: 'Processing...',
     browserUpgradeAlert: 'Your browser version does not support the file rename API. Please upgrade to Chrome 123 or later.',
+    undo: 'Undo',
+    undoDesc: 'Revert the last rename operation',
 
     // ReplaceRule
     findLabel: 'Find',
@@ -92,6 +96,7 @@ const translations = {
     invalidRegex: 'Invalid regex pattern',
     useRegex: 'Use Regex',
     caseSensitive: 'Case Sensitive',
+    includeExt: 'Include Extension',
 
     // PrefixSuffixRule
     prefixLabel: 'Add to the beginning of filename',
@@ -230,6 +235,8 @@ const translations = {
     selectFolderFirst: '请先选择文件夹',
     errorLabel: '错误',
     conflictLabel: '冲突',
+    selected: '已选中',
+    toggleSelectAll: '全选 / 取消全选',
 
     // ActionBar
     results: '执行结果',
@@ -241,6 +248,8 @@ const translations = {
     applyRename: '确认执行',
     processing: '执行中...',
     browserUpgradeAlert: '您的浏览器版本不支持文件重命名 API，请升级至 Chrome 123 或更高版本。',
+    undo: '撤销',
+    undoDesc: '撤销上次重命名操作',
 
     // ReplaceRule
     findLabel: '查找',
@@ -251,6 +260,7 @@ const translations = {
     invalidRegex: '无效的正则表达式',
     useRegex: '使用正则',
     caseSensitive: '区分大小写',
+    includeExt: '包含扩展名',
 
     // PrefixSuffixRule
     prefixLabel: '在文件名开头添加',
@@ -389,6 +399,8 @@ const translations = {
     selectFolderFirst: '請先選擇資料夾',
     errorLabel: '錯誤',
     conflictLabel: '衝突',
+    selected: '已選取',
+    toggleSelectAll: '全選 / 取消全選',
 
     // ActionBar
     results: '執行結果',
@@ -400,6 +412,8 @@ const translations = {
     applyRename: '確認執行',
     processing: '執行中...',
     browserUpgradeAlert: '您的瀏覽器版本不支援檔案重新命名 API，請升級至 Chrome 123 或更高版本。',
+    undo: '復原',
+    undoDesc: '復原上次重新命名操作',
 
     // ReplaceRule
     findLabel: '尋找',
@@ -410,6 +424,7 @@ const translations = {
     invalidRegex: '無效的正規表示式',
     useRegex: '使用正規表示式',
     caseSensitive: '區分大小寫',
+    includeExt: '包含副檔名',
 
     // PrefixSuffixRule
     prefixLabel: '在檔名開頭新增',
@@ -548,6 +563,8 @@ const translations = {
     selectFolderFirst: 'Выберите папку для начала работы',
     errorLabel: 'Ошибка',
     conflictLabel: 'Конфликт',
+    selected: 'выбрано',
+    toggleSelectAll: 'Выбрать всё / Снять выбор',
 
     // ActionBar
     results: 'Результаты',
@@ -559,6 +576,8 @@ const translations = {
     applyRename: 'Применить',
     processing: 'Обработка...',
     browserUpgradeAlert: 'Ваш браузер не поддерживает API переименования файлов. Обновите Chrome до версии 123 или выше.',
+    undo: 'Отменить',
+    undoDesc: 'Отменить последнее переименование',
 
     // ReplaceRule
     findLabel: 'Найти',
@@ -569,6 +588,7 @@ const translations = {
     invalidRegex: 'Некорректный regex-шаблон',
     useRegex: 'Использовать Regex',
     caseSensitive: 'Учитывать регистр',
+    includeExt: 'Включая расширение',
 
     // PrefixSuffixRule
     prefixLabel: 'Добавить в начало имени файла',

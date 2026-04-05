@@ -4,7 +4,7 @@ import { checkMoveSupport } from '../core/fsApi';
 import { useI18n } from '../i18n';
 
 export default function ActionBar() {
-  const { previews, rules, reset, executeRename, isProcessing, progress, results, clearResults } = useRenameStore();
+  const { previews, rules, reset, executeRename, undoRename, isProcessing, progress, results, clearResults, undoHistory } = useRenameStore();
   const { t } = useI18n();
   const [showResults, setShowResults] = useState(false);
 
@@ -23,6 +23,17 @@ export default function ActionBar() {
     if (toRenameCount === 0) return;
     setShowResults(false);
     await executeRename();
+    setShowResults(true);
+  };
+
+  const handleUndo = async () => {
+    if (!isMoveSupported) {
+      alert(t('browserUpgradeAlert'));
+      return;
+    }
+    setShowResults(false);
+    clearResults();
+    await undoRename();
     setShowResults(true);
   };
 
@@ -91,7 +102,7 @@ export default function ActionBar() {
 
       {/* 操作按钮栏 */}
       <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 px-4 py-3 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             onClick={handleReset}
             disabled={isProcessing || rules.length === 0}
@@ -99,6 +110,24 @@ export default function ActionBar() {
           >
             {t('resetRules')}
           </button>
+
+          {/* 撤销按钮：执行后出现 */}
+          {undoHistory.length > 0 && (
+            <button
+              onClick={handleUndo}
+              disabled={isProcessing}
+              className="flex items-center gap-1.5 px-4 py-2 text-sm text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-700 rounded-lg hover:bg-amber-50 dark:hover:bg-amber-900/20 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              title={t('undoDesc')}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+              </svg>
+              {t('undo')}
+              <span className="bg-amber-100 dark:bg-amber-800/40 text-amber-600 dark:text-amber-400 text-xs px-1.5 py-0.5 rounded-full">
+                {undoHistory.length}
+              </span>
+            </button>
+          )}
 
           {conflictCount > 0 && (
             <span className="text-xs text-amber-600 bg-amber-50 dark:bg-amber-900/20 px-2.5 py-1 rounded-full">

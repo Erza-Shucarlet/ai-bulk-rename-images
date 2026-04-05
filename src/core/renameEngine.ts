@@ -21,7 +21,22 @@ export function applyRules(
     try {
       switch (rule.type) {
         case 'replace': {
-          currentBasename = applyReplace(currentBasename, rule);
+          if (rule.includeExt) {
+            // 对 basename+ext 整体替换，替换完后重新拆分
+            const full = currentBasename + currentExt;
+            const replaced = applyReplace(full, rule);
+            // 重新拆分结果
+            const dotIdx = replaced.lastIndexOf('.');
+            if (dotIdx <= 0) {
+              currentBasename = replaced;
+              currentExt = '';
+            } else {
+              currentBasename = replaced.slice(0, dotIdx);
+              currentExt = replaced.slice(dotIdx);
+            }
+          } else {
+            currentBasename = applyReplace(currentBasename, rule);
+          }
           break;
         }
         case 'prefix': {

@@ -75,6 +75,15 @@ export default function ReplaceRule({ rule }: Props) {
           />
           <span className="text-xs text-slate-600 dark:text-slate-300">{t('caseSensitive')}</span>
         </label>
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={rule.includeExt}
+            onChange={(e) => updateRule(rule.id, { includeExt: e.target.checked })}
+            className="w-3.5 h-3.5 accent-blue-500"
+          />
+          <span className="text-xs text-slate-600 dark:text-slate-300">{t('includeExt')}</span>
+        </label>
       </div>
     </div>
   );

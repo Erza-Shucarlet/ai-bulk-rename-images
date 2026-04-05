@@ -2,7 +2,7 @@ import { useRenameStore } from '../store/useRenameStore';
 import { useI18n } from '../i18n';
 
 export default function PreviewTable() {
-  const { previews, files } = useRenameStore();
+  const { previews, files, selectedFiles, toggleFileSelection, toggleSelectAll } = useRenameStore();
   const { t } = useI18n();
 
   if (files.length === 0) {
@@ -20,7 +20,12 @@ export default function PreviewTable() {
     );
   }
 
-  const changedCount = previews.filter((p) => p.original !== p.preview && !p.error).length;
+  // 全选 = null；部分选 = Set；全不选 = 空 Set
+  const allSelected = selectedFiles === null;
+  const selectedCount = selectedFiles === null ? files.length : selectedFiles.size;
+  const isIndeterminate = !allSelected && selectedCount > 0;
+
+  const changedCount = previews.filter((p) => p.original !== p.preview && !p.error && !p.skipped).length;
   const conflictCount = previews.filter((p) => p.conflict).length;
   const errorCount = previews.filter((p) => p.error).length;
 
@@ -31,7 +36,11 @@ export default function PreviewTable() {
           {t('preview')}
         </h2>
         <div className="flex items-center gap-3 text-xs">
-          <span className="text-slate-400 dark:text-slate-500">{previews.length} {t('files')}</span>
+          <span className="text-slate-400 dark:text-slate-500">
+            {selectedCount === files.length
+              ? `${files.length} ${t('files')}`
+              : `${selectedCount} / ${files.length} ${t('files')} ${t('selected')}`}
+          </span>
           {changedCount > 0 && (
             <span className="text-blue-600 font-medium">{changedCount} {t('willBeRenamed')}</span>
           )}
@@ -53,6 +62,18 @@ export default function PreviewTable() {
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-slate-50 dark:bg-slate-700/50">
+              <th className="px-3 py-2 w-8">
+                <input
+                  type="checkbox"
+                  checked={allSelected}
+                  ref={(el) => {
+                    if (el) el.indeterminate = isIndeterminate;
+                  }}
+                  onChange={toggleSelectAll}
+                  className="w-3.5 h-3.5 accent-blue-500 cursor-pointer"
+                  title={t('toggleSelectAll')}
+                />
+              </th>
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-8">#</th>
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500">{t('originalName')}</th>
               <th className="px-4 py-2 text-left text-xs font-medium text-slate-400 dark:text-slate-500 w-6"></th>
@@ -62,9 +83,26 @@ export default function PreviewTable() {
           </thead>
           <tbody className="divide-y divide-slate-50 dark:divide-slate-700">
             {previews.map((entry, i) => {
-              const changed = entry.original !== entry.preview && !entry.error;
+              const checked = selectedFiles === null || selectedFiles.has(entry.original);
+              const changed = entry.original !== entry.preview && !entry.error && !entry.skipped;
               return (
-                <tr key={entry.original + i} className="hover:bg-slate-50/50 dark:hover:bg-slate-700/30 transition-colors">
+                <tr
+                  key={entry.original + i}
+                  className={`transition-colors cursor-pointer ${
+                    entry.skipped
+                      ? 'opacity-40 hover:opacity-60'
+                      : 'hover:bg-slate-50/50 dark:hover:bg-slate-700/30'
+                  }`}
+                  onClick={() => toggleFileSelection(entry.original)}
+                >
+                  <td className="px-3 py-2.5" onClick={(e) => e.stopPropagation()}>
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => toggleFileSelection(entry.original)}
+                      className="w-3.5 h-3.5 accent-blue-500 cursor-pointer"
+                    />
+                  </td>
                   <td className="px-4 py-2.5 text-slate-300 dark:text-slate-600 text-xs">{i + 1}</td>
                   <td className="px-4 py-2.5 font-mono text-slate-600 dark:text-slate-300 max-w-xs">
                     <span className="truncate block" title={entry.original}>
@@ -81,6 +119,8 @@ export default function PreviewTable() {
                   <td className="px-4 py-2.5 font-mono max-w-xs">
                     {entry.error ? (
                       <span className="text-slate-400 dark:text-slate-500 text-xs">{entry.original}</span>
+                    ) : entry.skipped ? (
+                      <span className="text-slate-400 dark:text-slate-500 text-xs">{entry.original}</span>
                     ) : (
                       <span
                         className={`truncate block ${changed ? 'text-blue-600 font-medium' : 'text-slate-400 dark:text-slate-500'}`}
@@ -91,7 +131,9 @@ export default function PreviewTable() {
                     )}
                   </td>
                   <td className="px-4 py-2.5">
-                    {entry.error ? (
+                    {entry.skipped ? (
+                      <span className="text-slate-300 dark:text-slate-600 text-xs">—</span>
+                    ) : entry.error ? (
                       <span className="inline-flex items-center gap-1 text-xs text-red-500" title={entry.error}>
                         <span>❌</span>
                         <span className="hidden sm:inline truncate max-w-20">{t('errorLabel')}</span>

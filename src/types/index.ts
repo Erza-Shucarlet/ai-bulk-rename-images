@@ -15,6 +15,7 @@ export interface ReplaceRule {
   replacement: string;
   useRegex: boolean;
   caseSensitive: boolean;
+  includeExt: boolean;
 }
 
 export interface PrefixRule {
@@ -66,6 +67,7 @@ export interface PreviewEntry {
   handle: FileSystemFileHandle;
   conflict: boolean;   // True if this new name collides with another file
   error?: string;      // Rule computation error (e.g. invalid regex)
+  skipped?: boolean;   // True if this file was not selected (excluded from rename)
 }
 
 // Rename execution result
