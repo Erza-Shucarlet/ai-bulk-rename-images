@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.3.1] - 2026-04-05
+
+### Added
+- 预览表格支持鼠标拖拽横向滚动，文件名不再截断，可拖动查看完整名称
+
+---
+
 ## [1.3.0] - 2026-04-05
 
 ### Added
