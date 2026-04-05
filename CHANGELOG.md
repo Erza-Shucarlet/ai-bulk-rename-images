@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.1] - 2026-04-05
+
+### Changed
+- Header logo 由雷電 SVG 替換為胖黃鴨圖片（logo.jpeg）
+
+---
+
 ## [1.1.0] - 2026-04-05
 
 ### Added
