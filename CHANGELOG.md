@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.10] - 2026-04-05
+
+### Fixed
+- 新增 `public/robots.txt`，修复格式无效问题，并声明 Sitemap URL
+- 新增 `public/llms.txt`，修复 LLMs.txt 格式错误问题
+- `PrivacyPolicy.tsx` 动态设置独立 `<title>` 和 `<meta description>`，修复与主页重复的 SEO 问题
+
+---
+
 ## [1.0.9] - 2026-04-02
 
 ### Changed

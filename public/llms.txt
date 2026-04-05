@@ -1,0 +1,30 @@
+# AI Bulk Rename Images & Files
+
+> A free, privacy-first browser-based tool to bulk rename images and files instantly — no uploads, no login, no installation required.
+
+## What it does
+
+Bulk rename images and files directly in your browser using the File System Access API. All operations are performed locally on your device; nothing is ever uploaded to a server.
+
+## Supported rename rules
+
+- Find & Replace (plain text or regex)
+- Add Prefix / Suffix
+- Change Case (uppercase, lowercase, title case)
+- Sequence numbering (001, 002…)
+- Change file extension
+
+## Key facts
+
+- 100% client-side — files never leave the device
+- No login or account required
+- Real-time preview before applying changes
+- Drag-to-reorder rules for complex workflows
+- Available in English, Chinese, and Russian
+- Requires Chrome 123+ or Microsoft Edge 123+
+
+## Links
+
+- Homepage: https://ai-bulk-rename-images.com
+- Privacy Policy: https://ai-bulk-rename-images.com/privacy
+- Contact: shucarlet@gmail.com
