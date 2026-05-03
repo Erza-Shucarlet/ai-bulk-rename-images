@@ -69,8 +69,8 @@ export default function BrowserGuard({ children }: BrowserGuardProps) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-sm">
-      <div className="max-w-md w-full mx-4 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 text-center">
+    <div className="py-8 px-4">
+      <div className="max-w-md w-full mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-amber-200 dark:border-amber-800 p-8 text-center">
         {/* 语言切换 */}
         <div className="flex justify-end mb-4">
           <div className="flex items-center bg-slate-100 dark:bg-slate-700 rounded-lg p-0.5 gap-0.5">

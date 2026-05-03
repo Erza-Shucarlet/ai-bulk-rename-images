@@ -127,7 +127,6 @@ function App() {
   const mailtoHref = `mailto:shucarlet@gmail.com?subject=${encodeURIComponent(`${today}_ai-bulk-rename-images_v${__APP_VERSION__}`)}`;
 
   return (
-    <BrowserGuard>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
         {/* Header */}
         <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-6 py-4">
@@ -171,34 +170,36 @@ function App() {
               </div>
 
               {/* 未选择文件夹：全宽显示 DropZone */}
-              {!hasFiles ? (
-                <div className="py-4">
-                  <DropZone />
-                </div>
-              ) : (
-                <>
-                  {/* Top: folder picker + rules */}
-                  <div className="grid grid-cols-12 gap-4 mb-4">
-                    <div className="col-span-12 lg:col-span-3">
-                      <DropZone />
-                    </div>
-                    <div className="col-span-12 lg:col-span-9">
-                      <RulesPanel />
-                    </div>
+              <BrowserGuard>
+                {!hasFiles ? (
+                  <div className="py-4">
+                    <DropZone />
                   </div>
+                ) : (
+                  <>
+                    {/* Top: folder picker + rules */}
+                    <div className="grid grid-cols-12 gap-4 mb-4">
+                      <div className="col-span-12 lg:col-span-3">
+                        <DropZone />
+                      </div>
+                      <div className="col-span-12 lg:col-span-9">
+                        <RulesPanel />
+                      </div>
+                    </div>
 
-                  {/* Preview table */}
-                  <PreviewTable />
+                    {/* Preview table */}
+                    <PreviewTable />
 
-                  {/* Action bar */}
-                  <div className="mt-4">
-                    <ActionBar />
-                  </div>
-                </>
-              )}
+                    {/* Action bar */}
+                    <div className="mt-4">
+                      <ActionBar />
+                    </div>
+                  </>
+                )}
+              </BrowserGuard>
 
               {/* 信息区：介绍、优势、FAQ */}
-              <div className={`border-t border-slate-200 dark:border-slate-700 pt-8 ${hasFiles ? 'mt-8' : 'mt-32'}`}>
+              <div className="border-t border-slate-200 dark:border-slate-700 pt-8 mt-8">
                 <InfoSection />
               </div>
             </main>
@@ -220,7 +221,6 @@ function App() {
           <SideAd side="right" />
         </div>
       </div>
-    </BrowserGuard>
   );
 }
 

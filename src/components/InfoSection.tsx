@@ -18,12 +18,9 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && (
-        <div className="px-5 py-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50 dark:bg-slate-700/30 border-t border-slate-100 dark:border-slate-700">
-          {answer}
-        </div>
-      )}
-    </div>
+      <div className={`px-5 py-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50 dark:bg-slate-700/30 border-t border-slate-100 dark:border-slate-700${open ? '' : ' hidden'}`}>
+        {answer}
+      </div>    </div>
   );
 }
 

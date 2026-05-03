@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.3.3] - 2026-05-03
+
+### Fixed
+- BrowserGuard 从全屏遮罩改为内联通知卡片，不再遮挡 InfoSection 内容，确保 Google AdSense 爬虫可见页面正文
+- FAQ 答案从条件渲染改为 CSS hidden 控制，答案文本始终存在于 DOM 中，爬虫无需交互即可读取
+- InfoSection 上方间距从 mt-32 改为固定 mt-8，减少空白区域
+
+---
+
 ## [1.3.2] - 2026-04-05
 
 ### Fixed
