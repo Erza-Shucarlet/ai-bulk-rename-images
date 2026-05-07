@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.3.4] - 2026-05-07
+
+### Fixed
+- 新建 sitemap.xml，修复 robots.txt 声明了 sitemap 但文件不存在导致 Google 无法正确索引的问题
+- _redirects 新增 /index.html → / 的 301 规则，显式处理 Cloudflare Pages Pretty URL 行为
+
+---
+
 ## [1.3.3] - 2026-05-03
 
 ### Fixed
